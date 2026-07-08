@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "chart": {
+      "subtitle": "Last 30 days",
+      "title": "Performance Overview"
+    },
+    "export": "Export",
+    "eyebrow": "Analytics",
+    "filter": "Filter",
+    "growth": {
+      "subtitle": "Month over month",
+      "title": "Growth Rate"
+    },
+    "pages": {
+      "subtitle": "Most visited",
+      "title": "Top Pages"
+    },
+    "refresh": "Refresh",
+    "revenue": {
+      "subtitle": "Total earned",
+      "title": "Revenue"
+    },
+    "sessions": {
+      "subtitle": "Active users",
+      "title": "Sessions"
+    },
+    "subtitle": "Track key metrics and performance in real time",
+    "title": "Dashboard",
+    "traffic": {
+      "subtitle": "Unique visitors",
+      "title": "Traffic"
+    },
+    "transactions": {
+      "subtitle": "Recent activity",
+      "title": "Transactions",
+      "viewAll": "View All"
+    }
+  },
+  "reports": {
+    "col": {
+      "amount": "Amount",
+      "channel": "Channel",
+      "date": "Date",
+      "id": "ID",
+      "plan": "Plan",
+      "status": "Status",
+      "user": "User"
+    },
+    "export": "Export",
+    "eyebrow": "Reports",
+    "filter": {
+      "allChannels": "All Channels",
+      "allStatus": "All Status",
+      "direct": "Direct",
+      "email": "Email",
+      "failed": "Failed",
+      "organic": "Organic",
+      "paid": "Paid",
+      "paid_channel": "Paid Channel",
+      "pending": "Pending",
+      "referral": "Referral",
+      "search": "Search"
+    },
+    "heading": "Transaction Reports",
+    "metric": {
+      "avgAmount": "Avg. Amount",
+      "conversion": "Conversion Rate",
+      "revenue": "Total Revenue"
+    },
+    "noResults": "No transactions found",
+    "pagination": {
+      "showing": "Showing"
+    },
+    "resultCount": "results",
+    "subheading": "Detailed breakdown of all transactions and conversions"
+  }
+}

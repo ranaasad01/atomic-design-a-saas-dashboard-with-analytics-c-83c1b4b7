@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "chart": {
+      "subtitle": "Últimos 30 días",
+      "title": "Resumen de Rendimiento"
+    },
+    "export": "Exportar",
+    "eyebrow": "Análisis",
+    "filter": "Filtrar",
+    "growth": {
+      "subtitle": "Mes a mes",
+      "title": "Tasa de Crecimiento"
+    },
+    "pages": {
+      "subtitle": "Más visitadas",
+      "title": "Páginas Principales"
+    },
+    "refresh": "Actualizar",
+    "revenue": {
+      "subtitle": "Total ganado",
+      "title": "Ingresos"
+    },
+    "sessions": {
+      "subtitle": "Usuarios activos",
+      "title": "Sesiones"
+    },
+    "subtitle": "Monitorea métricas clave y rendimiento en tiempo real",
+    "title": "Panel de Control",
+    "traffic": {
+      "subtitle": "Visitantes únicos",
+      "title": "Tráfico"
+    },
+    "transactions": {
+      "subtitle": "Actividad reciente",
+      "title": "Transacciones",
+      "viewAll": "Ver Todo"
+    }
+  },
+  "reports": {
+    "col": {
+      "amount": "Monto",
+      "channel": "Canal",
+      "date": "Fecha",
+      "id": "ID",
+      "plan": "Plan",
+      "status": "Estado",
+      "user": "Usuario"
+    },
+    "export": "Exportar",
+    "eyebrow": "Reportes",
+    "filter": {
+      "allChannels": "Todos los Canales",
+      "allStatus": "Todos los Estados",
+      "direct": "Directo",
+      "email": "Correo Electrónico",
+      "failed": "Fallido",
+      "organic": "Orgánico",
+      "paid": "Pagado",
+      "paid_channel": "Canal Pagado",
+      "pending": "Pendiente",
+      "referral": "Referencia",
+      "search": "Buscar"
+    },
+    "heading": "Informes de Transacciones",
+    "metric": {
+      "avgAmount": "Cantidad Promedio",
+      "conversion": "Tasa de Conversión",
+      "revenue": "Ingresos Totales"
+    },
+    "noResults": "No se encontraron transacciones",
+    "pagination": {
+      "showing": "Mostrando"
+    },
+    "resultCount": "resultados",
+    "subheading": "Desglose detallado de todas las transacciones y conversiones"
+  }
+}
