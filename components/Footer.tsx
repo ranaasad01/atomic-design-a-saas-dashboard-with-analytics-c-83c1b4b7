@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={fadeInUp} className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4 group w-fit">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center shadow-[0_0_12px_rgba(99,102,241,0.4)] group-hover:shadow-[0_0_20px_rgba(99,102,241,0.6)] transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 to-cyan-400 flex items-center justify-center shadow-[0_0_12px_rgba(99,102,241,0.4)] group-hover:shadow-[0_0_20px_rgba(99,102,241,0.6)] transition-all duration-300">
                 <Activity className="w-4 h-4 text-white" />
               </div>
               <span className="text-base font-semibold tracking-tight text-white">

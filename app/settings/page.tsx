@@ -47,7 +47,7 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const ACCENT_COLORS = [
-  { name: "Indigo", value: "#6366F1", tw: "bg-indigo-500" },
+  { name: "Indigo", value: "#6366F1", tw: "bg-rose-500" },
   { name: "Violet", value: "#8B5CF6", tw: "bg-violet-500" },
   { name: "Cyan", value: "#22D3EE", tw: "bg-cyan-400" },
   { name: "Emerald", value: "#10B981", tw: "bg-emerald-500" },
@@ -111,8 +111,8 @@ function ToggleSwitch({
         role="switch"
         aria-checked={enabled}
         onClick={() => onChange(!enabled)}
-        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-500 ${
-          enabled ? "bg-indigo-500" : "bg-white/10"
+        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-rose-500 ${
+          enabled ? "bg-rose-500" : "bg-white/10"
         }`}
       >
         <span
@@ -145,7 +145,7 @@ function ProfilePanel() {
   }
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/30 transition-all duration-200";
+    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500/60 focus:ring-1 focus:ring-rose-500/30 transition-all duration-200";
 
   return (
     <motion.div
@@ -162,7 +162,7 @@ function ProfilePanel() {
       {/* Avatar */}
       <motion.div variants={fadeInUp} className="flex items-center gap-5 mb-8">
         <div className="relative group">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold shadow-[0_0_24px_rgba(99,102,241,0.4)]">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-500 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold shadow-[0_0_24px_rgba(99,102,241,0.4)]">
             AC
           </div>
           <button className="absolute inset-0 rounded-2xl bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
@@ -263,7 +263,7 @@ function ProfilePanel() {
           className={`flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
             saved
               ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-              : "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
+              : "bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
           }`}
         >
           {saved ? (
@@ -381,7 +381,7 @@ function NotificationsPanel() {
           className={`flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
             saved
               ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-              : "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
+              : "bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
           }`}
         >
           {saved ? (
@@ -428,13 +428,13 @@ function BillingPanel() {
       {/* Current plan */}
       <motion.div
         variants={scaleIn}
-        className="relative rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 to-cyan-500/5 p-6 mb-6 overflow-hidden"
+        className="relative rounded-2xl border border-rose-500/30 bg-gradient-to-br from-rose-500/10 to-cyan-500/5 p-6 mb-6 overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="flex items-start justify-between relative z-10">
           <div>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-xs font-semibold text-indigo-300 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-xs font-semibold text-rose-300 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
               Active
             </span>
             <h3 className="text-lg font-semibold text-white">Pro Plan</h3>
@@ -448,7 +448,7 @@ function BillingPanel() {
           </div>
         </div>
         <div className="mt-4 flex items-center gap-3 relative z-10">
-          <button className="px-4 py-2 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-400 rounded-xl transition-colors duration-200">
+          <button className="px-4 py-2 text-sm font-medium text-white bg-rose-500 hover:bg-rose-400 rounded-xl transition-colors duration-200">
             Upgrade to Enterprise
           </button>
           <button className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-200">
@@ -464,7 +464,7 @@ function BillingPanel() {
       >
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm font-medium text-white">Payment method</p>
-          <button className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors">
+          <button className="text-xs text-rose-400 hover:text-rose-300 transition-colors">
             Update
           </button>
         </div>
@@ -499,7 +499,7 @@ function BillingPanel() {
                 <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-medium">
                   {inv.status}
                 </span>
-                <button className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors">
+                <button className="text-xs text-rose-400 hover:text-rose-300 transition-colors">
                   Download
                 </button>
               </div>
@@ -560,7 +560,7 @@ function AppearancePanel() {
               onClick={() => setThemeMode(mode.value)}
               className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all duration-200 ${
                 themeMode === mode.value
-                  ? "border-indigo-500/60 bg-indigo-500/15 text-indigo-300"
+                  ? "border-rose-500/60 bg-rose-500/15 text-rose-300"
                   : "border-white/10 bg-white/3 text-slate-400 hover:text-white hover:bg-white/8"
               }`}
             >
@@ -617,14 +617,14 @@ function AppearancePanel() {
               onClick={() => setDensity(opt.value)}
               className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl border text-left transition-all duration-200 ${
                 density === opt.value
-                  ? "border-indigo-500/50 bg-indigo-500/10"
+                  ? "border-rose-500/50 bg-rose-500/10"
                   : "border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15"
               }`}
             >
               <div>
                 <p
                   className={`text-sm font-medium ${
-                    density === opt.value ? "text-indigo-300" : "text-white"
+                    density === opt.value ? "text-rose-300" : "text-white"
                   }`}
                 >
                   {opt.label}
@@ -632,7 +632,7 @@ function AppearancePanel() {
                 <p className="text-xs text-slate-500 mt-0.5">{opt.description}</p>
               </div>
               {density === opt.value && (
-                <Check className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                <Check className="w-4 h-4 text-rose-400 flex-shrink-0" />
               )}
             </button>
           ))}
@@ -647,7 +647,7 @@ function AppearancePanel() {
           className={`flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
             saved
               ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-              : "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
+              : "bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)]"
           }`}
         >
           {saved ? (
@@ -721,14 +721,14 @@ export default function SettingsPage() {
                       i < NAV_ITEMS.length - 1 ? "border-b border-white/6" : ""
                     } ${
                       active
-                        ? "bg-indigo-500/15 text-white"
+                        ? "bg-rose-500/15 text-white"
                         : "text-slate-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <div
                       className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
                         active
-                          ? "bg-indigo-500/30 text-indigo-300"
+                          ? "bg-rose-500/30 text-rose-300"
                           : "bg-white/5 text-slate-500"
                       }`}
                     >
@@ -741,7 +741,7 @@ export default function SettingsPage() {
                       </p>
                     </div>
                     {active && (
-                      <ChevronRight className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                      <ChevronRight className="w-4 h-4 text-rose-400 flex-shrink-0" />
                     )}
                   </motion.button>
                 );

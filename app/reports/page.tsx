@@ -107,7 +107,7 @@ function StatusBadge({ status }: { status: Status }) {
 
 function ChannelPill({ channel }: { channel: Channel }) {
   const map: Record<Channel, string> = {
-    organic: "bg-indigo-500/15 text-indigo-400 border-indigo-500/20",
+    organic: "bg-rose-500/15 text-rose-400 border-rose-500/20",
     paid: "bg-cyan-500/15 text-cyan-400 border-cyan-500/20",
     referral: "bg-violet-500/15 text-violet-400 border-violet-500/20",
     direct: "bg-slate-500/15 text-slate-400 border-slate-500/20",
@@ -123,8 +123,8 @@ function ChannelPill({ channel }: { channel: Channel }) {
 function SortIcon({ col, sortKey, sortDir }: { col: SortKey; sortKey: SortKey; sortDir: SortDir }) {
   if (col !== sortKey) return <ArrowUpDown className="w-3.5 h-3.5 text-slate-600" />;
   return sortDir === "asc"
-    ? <ChevronUp className="w-3.5 h-3.5 text-indigo-400" />
-    : <ChevronDown className="w-3.5 h-3.5 text-indigo-400" />;
+    ? <ChevronUp className="w-3.5 h-3.5 text-rose-400" />
+    : <ChevronDown className="w-3.5 h-3.5 text-rose-400" />;
 }
 
 // ── Main page ──────────────────────────────────────────────────────────────────
@@ -231,7 +231,7 @@ export default function ReportsPage() {
           variants={staggerContainer}
           className="mb-10"
         >
-          <motion.p variants={fadeInUp} className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-2">
+          <motion.p variants={fadeInUp} className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-2">
             {t("reports.eyebrow")}
           </motion.p>
           <motion.h1
@@ -271,7 +271,7 @@ export default function ReportsPage() {
               icon: Target,
               label: t("reports.metric.conversion"),
               value: `${conversionRate}%`,
-              accent: "text-indigo-400",
+              accent: "text-rose-400",
               glow: "shadow-[0_0_16px_rgba(99,102,241,0.12)]",
             },
           ].map(({ icon: Icon, label, value, accent, glow }) => (
@@ -308,7 +308,7 @@ export default function ReportsPage() {
                 value={search}
                 onChange={(e) => { setSearch(e.target.value); setPage(1); }}
                 placeholder={t("reports.filter.search")}
-                className="w-full pl-9 pr-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/30 transition-all"
+                className="w-full pl-9 pr-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-rose-500/60 focus:ring-1 focus:ring-rose-500/30 transition-all"
               />
             </div>
 
@@ -318,7 +318,7 @@ export default function ReportsPage() {
               <select
                 value={statusFilter}
                 onChange={(e) => { setStatusFilter(e.target.value as "all" | Status); setPage(1); }}
-                className="pl-8 pr-8 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-indigo-500/60 appearance-none cursor-pointer transition-all"
+                className="pl-8 pr-8 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-rose-500/60 appearance-none cursor-pointer transition-all"
               >
                 <option value="all">{t("reports.filter.allStatus")}</option>
                 <option value="paid">{t("reports.filter.paid")}</option>
@@ -332,7 +332,7 @@ export default function ReportsPage() {
               <select
                 value={channelFilter}
                 onChange={(e) => { setChannelFilter(e.target.value as "all" | Channel); setPage(1); }}
-                className="px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-indigo-500/60 appearance-none cursor-pointer transition-all"
+                className="px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-rose-500/60 appearance-none cursor-pointer transition-all"
               >
                 <option value="all">{t("reports.filter.allChannels")}</option>
                 <option value="organic">{t("reports.filter.organic")}</option>
@@ -350,14 +350,14 @@ export default function ReportsPage() {
                 type="date"
                 value={dateFrom}
                 onChange={(e) => { setDateFrom(e.target.value); setPage(1); }}
-                className="px-2 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-indigo-500/60 transition-all [color-scheme:dark]"
+                className="px-2 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-rose-500/60 transition-all [color-scheme:dark]"
               />
               <span className="text-slate-600 text-xs">to</span>
               <input
                 type="date"
                 value={dateTo}
                 onChange={(e) => { setDateTo(e.target.value); setPage(1); }}
-                className="px-2 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-indigo-500/60 transition-all [color-scheme:dark]"
+                className="px-2 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-slate-300 focus:outline-none focus:border-rose-500/60 transition-all [color-scheme:dark]"
               />
             </div>
 
@@ -366,7 +366,7 @@ export default function ReportsPage() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => exportCSV(filtered)}
-              className="ml-auto flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 shadow-[0_0_16px_rgba(99,102,241,0.3)] hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] transition-all duration-300 flex-shrink-0"
+              className="ml-auto flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 shadow-[0_0_16px_rgba(99,102,241,0.3)] hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] transition-all duration-300 flex-shrink-0"
             >
               <Download className="w-4 h-4" />
               {t("reports.export")}
@@ -490,7 +490,7 @@ export default function ReportsPage() {
                       onClick={() => setPage(item as number)}
                       className={`w-7 h-7 rounded-lg text-xs font-medium transition-all ${
                         page === item
-                          ? "bg-indigo-500 text-white shadow-[0_0_12px_rgba(99,102,241,0.4)]"
+                          ? "bg-rose-500 text-white shadow-[0_0_12px_rgba(99,102,241,0.4)]"
                           : "text-slate-400 hover:text-white hover:bg-white/10"
                       }`}
                     >

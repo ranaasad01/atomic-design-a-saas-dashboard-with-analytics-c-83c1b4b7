@@ -82,8 +82,8 @@ const kpiCards = [
     positive: true,
     icon: DollarSign,
     sub: "vs last quarter",
-    color: "from-indigo-500/20 to-indigo-600/5",
-    iconBg: "bg-indigo-500/20 text-indigo-400",
+    color: "from-rose-500/20 to-rose-600/5",
+    iconBg: "bg-rose-500/20 text-rose-400",
     glow: "shadow-[0_0_24px_rgba(99,102,241,0.15)]",
   },
   {
@@ -236,7 +236,7 @@ export default function DashboardMainAnalyticsOverview() {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
         >
           <motion.div variants={fadeInUp}>
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-1">
+            <p className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-1">
               {t("dashboard.eyebrow")}
             </p>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white text-balance">
@@ -255,7 +255,7 @@ export default function DashboardMainAnalyticsOverview() {
               <Filter className="w-3.5 h-3.5" />
               {t("dashboard.filter")}
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white text-sm font-medium shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)] transition-all duration-300">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 text-white text-sm font-medium shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)] transition-all duration-300">
               <Download className="w-3.5 h-3.5" />
               {t("dashboard.export")}
             </button>
@@ -337,7 +337,7 @@ export default function DashboardMainAnalyticsOverview() {
                       onClick={() => setActiveTab(tab)}
                       className={`px-3 py-1.5 rounded-md font-medium capitalize transition-all duration-200 ${
                         activeTab === tab
-                          ? "bg-indigo-500 text-white shadow-sm"
+                          ? "bg-rose-500 text-white shadow-sm"
                           : "text-slate-400 hover:text-white"
                       }`}
                     >
@@ -579,7 +579,7 @@ export default function DashboardMainAnalyticsOverview() {
                   {t("dashboard.transactions.subtitle")}
                 </p>
               </div>
-              <button className="text-xs text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
+              <button className="text-xs text-rose-400 hover:text-rose-300 font-medium transition-colors">
                 {t("dashboard.transactions.viewAll")}
               </button>
             </div>

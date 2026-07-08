@@ -211,10 +211,10 @@ function KPIStrip() {
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             className="relative rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 shadow-[0_1px_2px_rgba(0,0,0,0.2),0_8px_24px_-8px_rgba(0,0,0,0.4)] overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent pointer-events-none" />
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-slate-400 font-medium">{kpi.label}</span>
-              <Icon className="w-3.5 h-3.5 text-indigo-400" />
+              <Icon className="w-3.5 h-3.5 text-rose-400" />
             </div>
             <p className="text-xl font-bold text-white tracking-tight">{kpi.value}</p>
             <p className={`text-xs mt-1 font-medium ${kpi.positive ? "text-emerald-400" : "text-rose-400"}`}>
@@ -264,7 +264,7 @@ function MiniDashboardPreview() {
               key={label}
               className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
                 active
-                  ? "bg-indigo-500/20 text-indigo-300 border border-indigo-500/20"
+                  ? "bg-rose-500/20 text-rose-300 border border-rose-500/20"
                   : "text-slate-500 hover:text-slate-300"
               }`}
             >
@@ -283,8 +283,8 @@ function MiniDashboardPreview() {
             </div>
             <div className="flex items-center gap-2">
               <div className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-400">Last 30 days</div>
-              <div className="w-7 h-7 rounded-lg bg-indigo-500/20 border border-indigo-500/20 flex items-center justify-center">
-                <Bell className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="w-7 h-7 rounded-lg bg-rose-500/20 border border-rose-500/20 flex items-center justify-center">
+                <Bell className="w-3.5 h-3.5 text-rose-400" />
               </div>
             </div>
           </div>
@@ -333,7 +333,7 @@ export default function HomePage() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-rose-600/20 rounded-full blur-[120px]" />
           <div className="absolute top-20 left-1/4 w-[400px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px]" />
         </div>
 
@@ -342,7 +342,7 @@ export default function HomePage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-rose-500/30 bg-rose-500/10 text-rose-300 text-xs font-medium mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
             Now with AI-powered anomaly detection
@@ -355,7 +355,7 @@ export default function HomePage() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.08]"
           >
             Analytics that{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
               move as fast
             </span>{" "}
             as your product
@@ -378,7 +378,7 @@ export default function HomePage() {
           >
             <Link
               href="/dashboard"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 text-white font-semibold text-sm shadow-[0_0_24px_rgba(99,102,241,0.45)] hover:shadow-[0_0_36px_rgba(99,102,241,0.65)] hover:from-indigo-400 hover:to-indigo-500 transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 text-white font-semibold text-sm shadow-[0_0_24px_rgba(99,102,241,0.45)] hover:shadow-[0_0_36px_rgba(99,102,241,0.65)] hover:from-rose-400 hover:to-rose-500 transition-all duration-300"
             >
               Open Dashboard
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -408,7 +408,7 @@ export default function HomePage() {
             {...motionProps(fadeInUp)}
             className="max-w-2xl mb-16"
           >
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">Platform</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-3">Platform</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
               Everything your team needs to make faster decisions
             </h2>
@@ -431,9 +431,9 @@ export default function HomePage() {
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className="md:col-span-2 relative rounded-2xl border border-white/10 bg-white/5 p-8 overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_-8px_rgba(0,0,0,0.4)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent pointer-events-none" />
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/20 flex items-center justify-center mb-5">
-                <BarChart2 className="w-5 h-5 text-indigo-400" />
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 via-transparent to-transparent pointer-events-none" />
+              <div className="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/20 flex items-center justify-center mb-5">
+                <BarChart2 className="w-5 h-5 text-rose-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Real-Time Analytics</h3>
               <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
@@ -479,8 +479,8 @@ export default function HomePage() {
               </p>
               <div className="space-y-2">
                 {[
-                  { label: "Visited pricing", pct: 100, color: "bg-indigo-500" },
-                  { label: "Started trial", pct: 68, color: "bg-indigo-400" },
+                  { label: "Visited pricing", pct: 100, color: "bg-rose-500" },
+                  { label: "Started trial", pct: 68, color: "bg-rose-400" },
                   { label: "Added card", pct: 41, color: "bg-violet-400" },
                   { label: "Converted", pct: 24, color: "bg-cyan-400" },
                 ].map((step) => (
@@ -510,8 +510,8 @@ export default function HomePage() {
                   whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   className="relative rounded-2xl border border-white/10 bg-white/5 p-6 overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_-8px_rgba(0,0,0,0.3)]"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-indigo-500/15 border border-indigo-500/15 flex items-center justify-center mb-4">
-                    <Icon className="w-4.5 h-4.5 text-indigo-400" />
+                  <div className="w-9 h-9 rounded-xl bg-rose-500/15 border border-rose-500/15 flex items-center justify-center mb-4">
+                    <Icon className="w-4.5 h-4.5 text-rose-400" />
                   </div>
                   <h3 className="text-base font-semibold text-white mb-2">{feat.title}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">{feat.description}</p>
@@ -526,7 +526,7 @@ export default function HomePage() {
       <section id="about" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <motion.div {...motionProps(fadeInUp)} className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">Insights</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-3">Insights</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
               Charts that tell the whole story
             </h2>
@@ -548,7 +548,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4 text-xs text-slate-400">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-sm bg-indigo-500 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-sm bg-rose-500 inline-block" />
                     Organic
                   </span>
                   <span className="flex items-center gap-1.5">
@@ -627,7 +627,7 @@ export default function HomePage() {
       <section id="testimonials" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div {...motionProps(fadeInUp)} className="text-center max-w-xl mx-auto mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">Social proof</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-3">Social proof</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
               Trusted by teams shipping fast
             </h2>
@@ -696,7 +696,7 @@ export default function HomePage() {
       <section id="pricing" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <motion.div {...motionProps(fadeInUp)} className="text-center max-w-xl mx-auto mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">Pricing</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-rose-400 mb-3">Pricing</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
               Simple pricing, no surprises
             </h2>
@@ -719,13 +719,13 @@ export default function HomePage() {
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 className={`relative rounded-2xl p-7 border shadow-[0_1px_2px_rgba(0,0,0,0.1),0_8px_24px_-8px_rgba(0,0,0,0.4)] ${
                   plan.highlighted
-                    ? "border-indigo-500/40 bg-gradient-to-b from-indigo-500/15 to-indigo-500/5"
+                    ? "border-rose-500/40 bg-gradient-to-b from-rose-500/15 to-rose-500/5"
                     : "border-white/10 bg-white/5"
                 }`}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 rounded-full bg-indigo-500 text-white text-xs font-semibold shadow-[0_0_16px_rgba(99,102,241,0.5)]">
+                    <span className="px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-semibold shadow-[0_0_16px_rgba(99,102,241,0.5)]">
                       Most popular
                     </span>
                   </div>
@@ -740,7 +740,7 @@ export default function HomePage() {
                   href="/dashboard"
                   className={`block w-full text-center py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 mb-7 ${
                     plan.highlighted
-                      ? "bg-indigo-500 hover:bg-indigo-400 text-white shadow-[0_0_16px_rgba(99,102,241,0.4)] hover:shadow-[0_0_24px_rgba(99,102,241,0.6)]"
+                      ? "bg-rose-500 hover:bg-rose-400 text-white shadow-[0_0_16px_rgba(99,102,241,0.4)] hover:shadow-[0_0_24px_rgba(99,102,241,0.6)]"
                       : "bg-white/10 hover:bg-white/15 text-white border border-white/10"
                   }`}
                 >
@@ -749,7 +749,7 @@ export default function HomePage() {
                 <ul className="space-y-2.5">
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <Check className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                      <Check className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" />
                       {feat}
                     </li>
                   ))}
@@ -765,13 +765,13 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <motion.div
             {...motionProps(scaleIn)}
-            className="relative rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-500/15 via-violet-500/10 to-cyan-500/10 p-12 md:p-16 text-center overflow-hidden shadow-[0_0_0_1px_rgba(99,102,241,0.1),0_32px_80px_-16px_rgba(99,102,241,0.25)]"
+            className="relative rounded-3xl border border-rose-500/20 bg-gradient-to-br from-rose-500/15 via-violet-500/10 to-cyan-500/10 p-12 md:p-16 text-center overflow-hidden shadow-[0_0_0_1px_rgba(99,102,241,0.1),0_32px_80px_-16px_rgba(99,102,241,0.25)]"
           >
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/20 rounded-full blur-[80px]" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-rose-600/20 rounded-full blur-[80px]" />
             </div>
             <div className="relative">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-rose-500/30 bg-rose-500/10 text-rose-300 text-xs font-medium mb-6">
                 <Zap className="w-3.5 h-3.5" />
                 14-day free trial, no card required
               </div>
@@ -784,7 +784,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
                   href="/dashboard"
-                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 text-white font-semibold text-sm shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:shadow-[0_0_40px_rgba(99,102,241,0.7)] hover:from-indigo-400 hover:to-indigo-500 transition-all duration-300"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 text-white font-semibold text-sm shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:shadow-[0_0_40px_rgba(99,102,241,0.7)] hover:from-rose-400 hover:to-rose-500 transition-all duration-300"
                 >
                   Start free trial
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />

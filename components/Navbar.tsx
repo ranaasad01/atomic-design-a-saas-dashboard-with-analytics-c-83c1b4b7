@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center shadow-[0_0_16px_rgba(99,102,241,0.5)] group-hover:shadow-[0_0_24px_rgba(99,102,241,0.7)] transition-all duration-300">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 to-cyan-400 flex items-center justify-center shadow-[0_0_16px_rgba(99,102,241,0.5)] group-hover:shadow-[0_0_24px_rgba(99,102,241,0.7)] transition-all duration-300">
               <Activity className="w-4 h-4 text-white" />
             </div>
             <span className="text-base font-semibold tracking-tight text-white">
@@ -90,7 +90,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/dashboard"
-              className="px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)] transition-all duration-300"
+              className="px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)] transition-all duration-300"
             >
               Open Dashboard
             </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
               <Link
                 href="/dashboard"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-4 py-2.5 text-sm font-medium text-center text-white rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600"
+                className="mt-2 px-4 py-2.5 text-sm font-medium text-center text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600"
               >
                 Open Dashboard
               </Link>

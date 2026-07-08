@@ -368,7 +368,7 @@ function PeriodSelector({
           onClick={() => onChange(p)}
           className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 ${
             value === p
-              ? "bg-indigo-500 text-white shadow-[0_0_12px_rgba(99,102,241,0.4)]"
+              ? "bg-rose-500 text-white shadow-[0_0_12px_rgba(99,102,241,0.4)]"
               : "text-slate-400 hover:text-white hover:bg-white/5"
           }`}
         >
@@ -423,7 +423,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[#0F172A] pt-20 pb-16">
       {/* Ambient background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-indigo-600/8 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-rose-600/8 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[400px] bg-cyan-500/6 rounded-full blur-[100px]" />
       </div>
 
@@ -671,7 +671,7 @@ export default function DashboardPage() {
             right={
               <div className="flex items-center gap-4 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-3 h-1.5 rounded-full bg-indigo-500 inline-block" />
+                  <span className="w-3 h-1.5 rounded-full bg-rose-500 inline-block" />
                   New Users
                 </span>
                 <span className="flex items-center gap-1.5">
