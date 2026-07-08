@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, APP_NAME } from "@/lib/data";
-import { Menu, X, Activity } from 'lucide-react';
+import { Menu, X, Activity, LogOut } from 'lucide-react';
+import { logout } from '@/lib/auth';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   function handleLinkClick(
@@ -38,6 +40,11 @@ export default function Navbar() {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
+
+  function handleLogout() {
+    logout();
+    router.push('/login');
+  }
 
   return (
     <motion.header
@@ -84,6 +91,13 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <button
+              onClick={handleLogout}
+              className="ml-2 flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Logout</span>
+            </button>
           </nav>
 
           {/* Desktop CTA */}
@@ -114,10 +128,10 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="md:hidden border-t border-white/10 bg-[#0F172A]/95 backdrop-blur-xl overflow-hidden"
           >
-            <div className="px-4 py-3 flex flex-col gap-1">
+            <nav className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -125,9 +139,9 @@ export default function Navbar() {
                     key={link.href}
                     href={getHref(link.href, link.type)}
                     onClick={(e) => handleLinkClick(e, link.href, link.type)}
-                    className={`px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                       active
-                        ? "text-white bg-white/10 border border-white/10"
+                        ? "text-white bg-white/10"
                         : "text-slate-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
@@ -135,14 +149,14 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/dashboard"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 px-4 py-2.5 text-sm font-medium text-center text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600"
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
               >
-                Open Dashboard
-              </Link>
-            </div>
+                <LogOut className="w-4 h-4" />
+                Logout
+              </button>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
