@@ -1,17 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, APP_NAME } from "@/lib/data";
 import { Menu, X, Activity, LogOut } from 'lucide-react';
-import { logout } from '@/lib/auth';
+import { logout, isAuthenticated } from '@/lib/auth';
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [authed, setAuthed] = useState(false);
+
+  useEffect(() => {
+    setAuthed(isAuthenticated());
+  }, [pathname]);
 
   function handleLinkClick(
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -43,6 +48,7 @@ export default function Navbar() {
 
   function handleLogout() {
     logout();
+    setAuthed(false);
     router.push('/login');
   }
 
@@ -91,29 +97,40 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <button
-              onClick={handleLogout}
-              className="ml-2 flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-            >
-              <LogOut className="w-4 h-4" />
-              <span>Logout</span>
-            </button>
+
+            {/* Auth action */}
+            {authed ? (
+              <button
+                onClick={handleLogout}
+                className="ml-2 flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>Log Out</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="ml-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 transition-all duration-200 shadow-[0_0_12px_rgba(99,102,241,0.4)] hover:shadow-[0_0_20px_rgba(99,102,241,0.6)]"
+              >
+                Sign In
+              </Link>
+            )}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/dashboard"
-              className="px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 shadow-[0_0_16px_rgba(99,102,241,0.35)] hover:shadow-[0_0_24px_rgba(99,102,241,0.55)] transition-all duration-300"
+              className="px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 transition-all duration-200 shadow-[0_0_12px_rgba(244,63,94,0.3)] hover:shadow-[0_0_20px_rgba(244,63,94,0.5)]"
             >
               Open Dashboard
             </Link>
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile hamburger */}
           <button
+            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all"
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -121,17 +138,18 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            key="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden border-t border-white/10 bg-[#0F172A]/95 backdrop-blur-xl overflow-hidden"
+            className="md:hidden overflow-hidden border-t border-white/10 bg-[#0F172A]/95 backdrop-blur-xl"
           >
-            <nav className="px-4 py-4 flex flex-col gap-1">
+            <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -139,9 +157,9 @@ export default function Navbar() {
                     key={link.href}
                     href={getHref(link.href, link.type)}
                     onClick={(e) => handleLinkClick(e, link.href, link.type)}
-                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                    className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                       active
-                        ? "text-white bg-white/10"
+                        ? "text-white bg-white/10 border border-white/10"
                         : "text-slate-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
@@ -149,14 +167,39 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-              >
-                <LogOut className="w-4 h-4" />
-                Logout
-              </button>
-            </nav>
+
+              {/* Mobile auth action */}
+              {authed ? (
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    handleLogout();
+                  }}
+                  className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span>Log Out</span>
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-2.5 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 transition-all duration-200 text-center mt-2"
+                >
+                  Sign In
+                </Link>
+              )}
+
+              <div className="pt-2">
+                <Link
+                  href="/dashboard"
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-2.5 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-400 hover:to-rose-500 transition-all duration-200 text-center"
+                >
+                  Open Dashboard
+                </Link>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
