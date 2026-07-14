@@ -1,5 +1,5 @@
-export const APP_NAME = "Pulse Analytics";
-export const APP_TAGLINE = "Real-time intelligence for modern SaaS teams.";
+export const APP_NAME = "Toby Website Builder";
+export const APP_TAGLINE = "Build beautiful websites with ease.";
 export const APP_ACCENT = "#6366F1";
 export const APP_CYAN = "#22D3EE";
 

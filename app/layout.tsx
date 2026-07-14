@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   formatDetection: { telephone: false, date: false, email: false, address: false },
-  title: "Pulse Analytics — SaaS Dashboard",
-  description: "Real-time analytics and business intelligence for modern SaaS teams.",
+  title: "Toby Website Builder — SaaS Dashboard",
+  description: "Build and manage beautiful websites with Toby Website Builder.",
   keywords: ["analytics", "dashboard", "SaaS", "metrics", "business intelligence"],
 };
 
